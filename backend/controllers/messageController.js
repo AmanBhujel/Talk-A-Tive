@@ -22,7 +22,7 @@ const sendMessage = expressAsyncHandler(async (req, res) => {
         message = await message.populate('sender', 'name pic')
         message = await message.populate('chat')
         message = await User.populate(message, {
-            path: 'chats.users',
+            path: 'chat.users',
             select: 'name pic email'
         });
 

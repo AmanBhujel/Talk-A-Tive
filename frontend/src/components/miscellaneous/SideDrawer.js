@@ -8,7 +8,6 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios'
 import ChatLoading from '../ChatLoading';
 import UserListItem from '../UserAvatar/UserListItem';
-import { getSender } from '../config/ChatLogics';
 
 //Top Component of chat page -----Have Logo , Profile and search bar
 // Also have Side Drawer which opens after search button is clicked
@@ -197,7 +196,7 @@ const SideDrawer = () => {
               display={'flex'}
               pb={2}>
               <Input
-                placeholder='Search by name or email'
+                placeholder='Search name or email'
                 mr={2}
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}

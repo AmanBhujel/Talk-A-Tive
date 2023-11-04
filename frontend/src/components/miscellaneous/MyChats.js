@@ -10,11 +10,10 @@ import GroupChatModel from './GroupChatModel';
 const MyChats = ({ fetchAgain }) => {
   const [loggedUser, setLoggedUser] = useState();
   const { selectedChat, setSelectedChat, user, chats, setChats } = ChatState();
-  const [loading, setLoading] = useState(false);
   const toast = useToast();
 
   const fetchChats = async () => {
-    if (!loading) {
+    // if (!loading) {
       try {
         const config = {
           headers: {
@@ -32,22 +31,24 @@ const MyChats = ({ fetchAgain }) => {
           isClosable: true,
           position: 'bottom-left'
         })
-      }
+      // }
     }
   };
 
-  useEffect(() => {
-    setTimeout(() => {
-      setLoading(true)
-    }, 3000)
-  }, [])
-
-  useEffect(() => {
-
-    setLoggedUser(JSON.parse(localStorage.getItem('userInfo')));
-    fetchChats();
+  useEffect(()=>{
     setSelectedChat('');
-  }, [fetchAgain, loading])
+  },[])
+
+  useEffect(() => {
+    const userInfo = JSON.parse(localStorage.getItem('userInfo'));
+
+    if (userInfo) {
+      setLoggedUser(() => userInfo);
+      fetchChats();
+    }
+
+  }, [fetchAgain]);
+
   return (
     <Box
       display={{ base: selectedChat ? 'none' : 'flex', md: 'flex' }}

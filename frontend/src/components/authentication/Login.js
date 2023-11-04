@@ -103,8 +103,8 @@ const Login = () => {
                 Log in
             </Button>
             <Button variant={'solid'} colorScheme='red' width={'100%'} onClick={() => {
-                setEmail("guest@example.com");
-                setPassword("123456");
+                setEmail("GuestUser");
+                setPassword("GuestUser");
             }}>
                 Get User Credentials
             </Button>

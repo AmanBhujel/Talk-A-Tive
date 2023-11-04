@@ -13,31 +13,29 @@ const MyChats = ({ fetchAgain }) => {
   const toast = useToast();
 
   const fetchChats = async () => {
-    // if (!loading) {
-      try {
-        const config = {
-          headers: {
-            Authorization: `Bearer ${user.token}`
-          }
-        };
-        const { data } = await axios.get('api/chat', config);
-        setChats(data);
-      } catch (error) {
-        toast({
-          title: "Error Occured",
-          description: 'Failed to load the chats',
-          status: 'error',
-          duration: 5000,
-          isClosable: true,
-          position: 'bottom-left'
-        })
-      // }
+    try {
+      const config = {
+        headers: {
+          Authorization: `Bearer ${user.token}`
+        }
+      };
+      const { data } = await axios.get('api/chat', config);
+      setChats(data);
+    } catch (error) {
+      toast({
+        title: "Error Occured",
+        description: 'Failed to load the chats',
+        status: 'error',
+        duration: 5000,
+        isClosable: true,
+        position: 'bottom-left'
+      })
     }
   };
 
-  useEffect(()=>{
+  useEffect(() => {
     setSelectedChat('');
-  },[])
+  }, [])
 
   useEffect(() => {
     const userInfo = JSON.parse(localStorage.getItem('userInfo'));

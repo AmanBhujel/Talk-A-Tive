@@ -14,9 +14,7 @@ app.use(express.json())
 
 const connectDB = require('./configuration/config');
 const path = require('path');
-// app.use('/',(req,res)=>{
-//     res.send('hi')
-// })
+
 app.use('/api/user', userRoutes);
 app.use('/api/chat', chatRoutes);
 app.use('/api/message', messageRoutes);
@@ -24,18 +22,31 @@ app.use('/api/message', messageRoutes);
 // --------------------------deployment------------------------------
 
 const __dirname1 = path.resolve(__dirname, '..'); // Go up one directory
+app.use(express.static(path.join(__dirname1, "./frontend/build")));
 
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname1, "/frontend/build")));
-
+  console.log('running file')
   app.get("*", (req, res) =>
-    res.sendFile(path.resolve(__dirname1, "frontend", "build", "index.html"))
+    res.sendFile(path.resolve(__dirname1, "./frontend/build/index.html"))
   );
 } else {
-  app.get("/", (req, res) => {
+  app.get("*", (req, res) => {
+
     res.send("API is running..");
+    console.log('error running production')
   });
 }
+
+//serving the front end
+// app.use(express.static(path.join(__dirname1, "./frontend/build")))
+
+// app.get("*", (req, res) => {
+//   res.sendFile(path.join(__dirname1, "./frontend/build/index.html")
+//     , function (err) {
+//       res.status(500).send(err)
+//     }
+//   )
+// })
 
 // --------------------------deployment------------------------------
 

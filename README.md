@@ -28,3 +28,13 @@
 - Start a new single chat or create a group chat.
 - Search for other users by their usernames or email addresses.
 - Enjoy real-time messaging and receive notifications for new messages.
+
+### **Installation**
+-git clone https://github.com/AmanBhujel/Talk-A-Tive.git
+-run "npm install" in main directory
+-go to frontend directory by "cd frontend" and again run "npm install"
+-create .env file with values for:
+   PORT=5000
+   MONGO_URL=get URL from mongoDB
+   NODE_ENV=production
+-run "npm start" in main directory 

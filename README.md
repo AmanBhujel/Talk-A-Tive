@@ -29,12 +29,15 @@
 - Search for other users by their usernames or email addresses.
 - Enjoy real-time messaging and receive notifications for new messages.
 
-### **Installation**
--git clone https://github.com/AmanBhujel/Talk-A-Tive.git
--run "npm install" in main directory
--go to frontend directory by "cd frontend" and again run "npm install"
--create .env file with values for:
+## Installation:
+
+- Clone the repository: git clone https://github.com/AmanBhujel/Talk-A-Tive.git
+- Install dependencies in the main directory: npm install
+- Navigate to the "frontend" directory: cd frontend
+- Install frontend dependencies: npm install
+- Create a .env file in the backend directory with the following values:
    PORT=5000
-   MONGO_URL=get URL from mongoDB
+   MONGO_URL=<your MongoDB URL>
    NODE_ENV=production
--run "npm start" in main directory 
+- Navigate to main directory from frontend: cd ..
+- Start the application in the main directory: npm start

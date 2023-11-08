@@ -1,5 +1,6 @@
 # Talk-A-Tive
 # Live site: https://talk-a-tive-t908.onrender.com
+-Deployed using render.com
 
 **MERN Chat App** is a modern and user-friendly chat application that allows users to engage in real-time messaging, both in single and group chats. This application is built using the MERN stack (MongoDB, Express.js, React, and Node.js) and incorporates Socket.io for real-time communication.
 

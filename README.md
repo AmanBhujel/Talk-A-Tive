@@ -42,3 +42,20 @@
    NODE_ENV=production
 - Navigate to main directory from frontend: cd ..
 - Start the application in the main directory: npm start
+
+
+## Project Photos:
+![Login](https://github.com/AmanBhujel/Talk-A-Tive/assets/132144406/ffa4eedd-05fb-42ec-af98-bac01441b1f4)
+
+
+![Talk-A-Tive](https://github.com/AmanBhujel/Talk-A-Tive/assets/132144406/75b9c561-a887-4935-a2a6-94fa1c039e0c)
+
+
+![Talk-ATive](https://github.com/AmanBhujel/Talk-A-Tive/assets/132144406/e35f4e5f-c5e0-4211-8819-936b3665bd3b)
+
+
+![talkative](https://github.com/AmanBhujel/Talk-A-Tive/assets/132144406/bcef9902-a2b9-444e-845e-f2fcfc88a1d9)
+
+
+
+
